@@ -38,6 +38,8 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 0 20px;
+    background-color: $background;
+    box-shadow: 0 0 8px 0 rgba($primary, 0.1);
 
     h1 {
       color: $seconday;
@@ -52,7 +54,7 @@ body {
   }
 
   main {
-    padding-top: 50px;
+    padding-top: 80px;
   }
 
   label {

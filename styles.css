@@ -30,6 +30,8 @@ body header {
   justify-content: space-between;
   align-items: center;
   padding: 0 20px;
+  background-color: #f1f1fa;
+  box-shadow: 0 0 8px 0 rgba(91, 92, 226, 0.1);
 }
 body header h1 {
   color: #2e375f;
@@ -41,7 +43,7 @@ body header .material-symbols-outlined {
   color: #5b5ce2;
 }
 body main {
-  padding-top: 50px;
+  padding-top: 80px;
 }
 body label {
   font-size: 12px;
