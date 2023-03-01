@@ -1,0 +1,137 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background-color: #f1f1fa;
+  font-family: "Roboto", sans-serif;
+}
+body button {
+  background-color: transparent;
+  border-width: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-style: inherit;
+  font-weight: inherit;
+  line-height: inherit;
+  cursor: pointer;
+  padding: 0;
+}
+body button span {
+  color: #5b5ce2;
+}
+body header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+}
+body header h1 {
+  color: #2e375f;
+  font-size: 1.6rem;
+  text-transform: uppercase;
+}
+body header .material-symbols-outlined {
+  font-size: 30px;
+  color: #5b5ce2;
+}
+body main {
+  padding-top: 50px;
+}
+body label {
+  font-size: 12px;
+  margin-top: 20px;
+}
+body input[type=file] {
+  display: none;
+}
+body .custom-file-upload {
+  display: inline-block;
+  padding: 6px 12px;
+  cursor: pointer;
+}
+body input {
+  width: 100%;
+  border: none;
+  border-radius: 4px;
+  outline: none;
+  padding: 8px;
+  box-sizing: border-box;
+  transition: 0.3s;
+}
+body input:focus {
+  border-color: rgba(91, 92, 226, 0.3);
+  box-shadow: 0 0 8px 0 rgba(91, 92, 226, 0.3);
+}
+body .contacts ul {
+  margin: 0;
+  padding: 0;
+}
+body .contacts ul li {
+  list-style: none;
+  display: flex;
+  justify-content: space-between;
+  margin: 20px 0;
+  align-items: center;
+  gap: 20px;
+}
+body .contacts ul li .contact {
+  display: flex;
+  align-items: center;
+}
+body .contacts ul li .contact img {
+  width: 70px;
+  padding-right: 20px;
+}
+body .contacts ul li .contact .contact__details span,
+body .contacts ul li .contact .contact__details a {
+  display: block;
+}
+body .contacts ul li .contact .contact__details a {
+  text-decoration: none;
+  color: #9197ae;
+  font-size: 14px;
+  padding-top: 5px;
+}
+body .contacts ul li .contact__more {
+  cursor: pointer;
+}
+body .contacts ul li .contact__more span {
+  color: #9197ae;
+}
+body .contact__actions {
+  position: fixed;
+  height: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: #fff;
+}
+body .contact__actions--active {
+  height: inherit;
+  background-color: #ffffff;
+  z-index: 1;
+  box-shadow: 0 0 8px 0 rgba(91, 92, 226, 0.2);
+}
+body .contact__actions ul li {
+  list-style: none;
+  display: flex;
+  align-items: center;
+}
+body .contact__actions ul li a {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  padding-top: 10px;
+  color: #5b5ce2;
+}
+body .contact__actions ul li a span {
+  color: #9197ae;
+  padding-right: 10px;
+  font-size: 16px;
+}
