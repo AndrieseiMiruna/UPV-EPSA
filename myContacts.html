@@ -5,235 +5,237 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>My contacts</title>
-		<link rel="stylesheet" href="/styles.css" />
-		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-		/>
+		<link rel="stylesheet" href="/assets/styles.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+		<script src="database.js"></script>
 	</head>
 	<body>
 		<header>
-			<a href="#">
-				<span class="material-symbols-outlined"> menu </span>
-			</a>
-			<h1>Contacts</h1>
-			<a href="/contactDetails.html">
-				<button>
-					<span class="material-symbols-outlined"> add </span>
-				</button>
-			</a>
+			<div class="wrapper">
+				<a href="#">
+					<span class="material-symbols-outlined"> menu </span>
+				</a>
+				<h1>Contacts</h1>
+				<a href="/contactDetails.html">
+					<button>
+						<span class="material-symbols-outlined"> add </span>
+					</button>
+				</a>
+			</div>
 		</header>
 		<main>
-			<input type="text" placeholder="Search" />
-			<div class="contacts">
-				<ul>
-					<li>
-						<div class="contact">
-							<img src="avatar.png" />
-							<div class="contact__details">
-								<span>John</span>
-								<a href="tel:+725122212">+725122212</a>
-								<a href="mail: johnjohn@gmail.com"> johnjohn@gmail.com </a>
+			<div class="wrapper">
+				<input type="text" placeholder="Search" />
+				<div class="contacts">
+					<ul>
+						<li>
+							<div class="contact">
+								<img src="assets/avatar.png" />
+								<div class="contact__details">
+									<span>John</span>
+									<a href="tel:+725122212">+725122212</a>
+									<a href="mailto: johnjohn@gmailto.com"> johnjohn@gmailto.com </a>
+								</div>
 							</div>
-						</div>
 
-						<div class="contact__more" data-id="1">
-							<span class="material-symbols-outlined"> more_vert </span>
-						</div>
-					</li>
-
-					<li>
-						<div class="contact">
-							<img src="avatar.png" />
-							<div class="contact__details">
-								<span>John</span>
-								<a href="tel:+725122212">+725122212</a>
-								<a href="mail: johnjohn@gmail.com"> johnjohn@gmail.com </a>
+							<div class="contact__more" data-id="1">
+								<span class="material-symbols-outlined"> more_vert </span>
 							</div>
-						</div>
+						</li>
 
-						<div class="contact__more" data-id="2">
-							<span class="material-symbols-outlined"> more_vert </span>
-						</div>
-					</li>
-
-					<li>
-						<div class="contact">
-							<img src="avatar.png" />
-							<div class="contact__details">
-								<span>John</span>
-								<a href="tel:+725122212">+725122212</a>
-								<a href="mail: johnjohn@gmail.com"> johnjohn@gmail.com </a>
+						<li>
+							<div class="contact">
+								<img src="assets/avatar.png" />
+								<div class="contact__details">
+									<span>John</span>
+									<a href="tel:+725122212">+725122212</a>
+									<a href="mailto: johnjohn@gmailto.com"> johnjohn@gmailto.com </a>
+								</div>
 							</div>
-						</div>
 
-						<div class="contact__more" data-id="3">
-							<span class="material-symbols-outlined"> more_vert </span>
-						</div>
-					</li>
-
-					<li>
-						<div class="contact">
-							<img src="avatar.png" />
-							<div class="contact__details">
-								<span>John</span>
-								<a href="tel:+725122212">+725122212</a>
-								<a href="mail: johnjohn@gmail.com"> johnjohn@gmail.com </a>
+							<div class="contact__more" data-id="2">
+								<span class="material-symbols-outlined"> more_vert </span>
 							</div>
-						</div>
+						</li>
 
-						<div class="contact__more" data-id="3">
-							<span class="material-symbols-outlined"> more_vert </span>
-						</div>
-					</li>
-
-					<li>
-						<div class="contact">
-							<img src="avatar.png" />
-							<div class="contact__details">
-								<span>John</span>
-								<a href="tel:+725122212">+725122212</a>
-								<a href="mail: johnjohn@gmail.com"> johnjohn@gmail.com </a>
+						<li>
+							<div class="contact">
+								<img src="assets/avatar.png" />
+								<div class="contact__details">
+									<span>John</span>
+									<a href="tel:+725122212">+725122212</a>
+									<a href="mailto: johnjohn@gmailto.com"> johnjohn@gmailto.com </a>
+								</div>
 							</div>
-						</div>
 
-						<div class="contact__more" data-id="3">
-							<span class="material-symbols-outlined"> more_vert </span>
-						</div>
-					</li>
-
-					<li>
-						<div class="contact">
-							<img src="avatar.png" />
-							<div class="contact__details">
-								<span>John</span>
-								<a href="tel:+725122212">+725122212</a>
-								<a href="mail: johnjohn@gmail.com"> johnjohn@gmail.com </a>
+							<div class="contact__more" data-id="3">
+								<span class="material-symbols-outlined"> more_vert </span>
 							</div>
-						</div>
+						</li>
 
-						<div class="contact__more" data-id="3">
-							<span class="material-symbols-outlined"> more_vert </span>
-						</div>
-					</li>
-
-					<li>
-						<div class="contact">
-							<img src="avatar.png" />
-							<div class="contact__details">
-								<span>John</span>
-								<a href="tel:+725122212">+725122212</a>
-								<a href="mail: johnjohn@gmail.com"> johnjohn@gmail.com </a>
+						<li>
+							<div class="contact">
+								<img src="assets/avatar.png" />
+								<div class="contact__details">
+									<span>John</span>
+									<a href="tel:+725122212">+725122212</a>
+									<a href="mailto: johnjohn@gmailto.com"> johnjohn@gmailto.com </a>
+								</div>
 							</div>
-						</div>
 
-						<div class="contact__more" data-id="3">
-							<span class="material-symbols-outlined"> more_vert </span>
-						</div>
-					</li>
-
-					<li>
-						<div class="contact">
-							<img src="avatar.png" />
-							<div class="contact__details">
-								<span>John</span>
-								<a href="tel:+725122212">+725122212</a>
-								<a href="mail: johnjohn@gmail.com"> johnjohn@gmail.com </a>
+							<div class="contact__more" data-id="3">
+								<span class="material-symbols-outlined"> more_vert </span>
 							</div>
-						</div>
+						</li>
 
-						<div class="contact__more" data-id="3">
-							<span class="material-symbols-outlined"> more_vert </span>
-						</div>
-					</li>
-					<li>
-						<div class="contact">
-							<img src="avatar.png" />
-							<div class="contact__details">
-								<span>John</span>
-								<a href="tel:+725122212">+725122212</a>
-								<a href="mail: johnjohn@gmail.com"> johnjohn@gmail.com </a>
+						<li>
+							<div class="contact">
+								<img src="assets/avatar.png" />
+								<div class="contact__details">
+									<span>John</span>
+									<a href="tel:+725122212">+725122212</a>
+									<a href="mailto: johnjohn@gmailto.com"> johnjohn@gmailto.com </a>
+								</div>
 							</div>
-						</div>
 
-						<div class="contact__more" data-id="3">
-							<span class="material-symbols-outlined"> more_vert </span>
-						</div>
-					</li>
-					<li>
-						<div class="contact">
-							<img src="avatar.png" />
-							<div class="contact__details">
-								<span>John</span>
-								<a href="tel:+725122212">+725122212</a>
-								<a href="mail: johnjohn@gmail.com"> johnjohn@gmail.com </a>
+							<div class="contact__more" data-id="3">
+								<span class="material-symbols-outlined"> more_vert </span>
 							</div>
-						</div>
+						</li>
 
-						<div class="contact__more" data-id="3">
-							<span class="material-symbols-outlined"> more_vert </span>
-						</div>
-					</li>
-					<li>
-						<div class="contact">
-							<img src="avatar.png" />
-							<div class="contact__details">
-								<span>John</span>
-								<a href="tel:+725122212">+725122212</a>
-								<a href="mail: johnjohn@gmail.com"> johnjohn@gmail.com </a>
+						<li>
+							<div class="contact">
+								<img src="assets/avatar.png" />
+								<div class="contact__details">
+									<span>John</span>
+									<a href="tel:+725122212">+725122212</a>
+									<a href="mailto: johnjohn@gmailto.com"> johnjohn@gmailto.com </a>
+								</div>
 							</div>
-						</div>
 
-						<div class="contact__more" data-id="3">
-							<span class="material-symbols-outlined"> more_vert </span>
-						</div>
-					</li>
-					<li>
-						<div class="contact">
-							<img src="avatar.png" />
-							<div class="contact__details">
-								<span>John</span>
-								<a href="tel:+725122212">+725122212</a>
-								<a href="mail: johnjohn@gmail.com"> johnjohn@gmail.com </a>
+							<div class="contact__more" data-id="3">
+								<span class="material-symbols-outlined"> more_vert </span>
 							</div>
-						</div>
+						</li>
 
-						<div class="contact__more" data-id="3">
-							<span class="material-symbols-outlined"> more_vert </span>
-						</div>
-					</li>
-					<li>
-						<div class="contact">
-							<img src="avatar.png" />
-							<div class="contact__details">
-								<span>John</span>
-								<a href="tel:+725122212">+725122212</a>
-								<a href="mail: johnjohn@gmail.com"> johnjohn@gmail.com </a>
+						<li>
+							<div class="contact">
+								<img src="assets/avatar.png" />
+								<div class="contact__details">
+									<span>John</span>
+									<a href="tel:+725122212">+725122212</a>
+									<a href="mailto: johnjohn@gmailto.com"> johnjohn@gmailto.com </a>
+								</div>
 							</div>
-						</div>
 
-						<div class="contact__more" data-id="3">
-							<span class="material-symbols-outlined"> more_vert </span>
-						</div>
-					</li>
-				</ul>
-			</div>
+							<div class="contact__more" data-id="3">
+								<span class="material-symbols-outlined"> more_vert </span>
+							</div>
+						</li>
 
-			<div class="contact__actions">
-				<ul>
-					<li>
-						<a href="#">
-							<span class="material-symbols-outlined"> edit </span>
-							Editar
-						</a>
-					</li>
-					<li>
-						<a href="#">
-							<span class="material-symbols-outlined"> delete </span>
-							Eliminar
-						</a>
-					</li>
-				</ul>
+						<li>
+							<div class="contact">
+								<img src="assets/avatar.png" />
+								<div class="contact__details">
+									<span>John</span>
+									<a href="tel:+725122212">+725122212</a>
+									<a href="mailto: johnjohn@gmailto.com"> johnjohn@gmailto.com </a>
+								</div>
+							</div>
+
+							<div class="contact__more" data-id="3">
+								<span class="material-symbols-outlined"> more_vert </span>
+							</div>
+						</li>
+						<li>
+							<div class="contact">
+								<img src="assets/avatar.png" />
+								<div class="contact__details">
+									<span>John</span>
+									<a href="tel:+725122212">+725122212</a>
+									<a href="mailto: johnjohn@gmailto.com"> johnjohn@gmailto.com </a>
+								</div>
+							</div>
+
+							<div class="contact__more" data-id="3">
+								<span class="material-symbols-outlined"> more_vert </span>
+							</div>
+						</li>
+						<li>
+							<div class="contact">
+								<img src="assets/avatar.png" />
+								<div class="contact__details">
+									<span>John</span>
+									<a href="tel:+725122212">+725122212</a>
+									<a href="mailto: johnjohn@gmailto.com"> johnjohn@gmailto.com </a>
+								</div>
+							</div>
+
+							<div class="contact__more" data-id="3">
+								<span class="material-symbols-outlined"> more_vert </span>
+							</div>
+						</li>
+						<li>
+							<div class="contact">
+								<img src="assets/avatar.png" />
+								<div class="contact__details">
+									<span>John</span>
+									<a href="tel:+725122212">+725122212</a>
+									<a href="mailto: johnjohn@gmailto.com"> johnjohn@gmailto.com </a>
+								</div>
+							</div>
+
+							<div class="contact__more" data-id="3">
+								<span class="material-symbols-outlined"> more_vert </span>
+							</div>
+						</li>
+						<li>
+							<div class="contact">
+								<img src="assets/avatar.png" />
+								<div class="contact__details">
+									<span>John</span>
+									<a href="tel:+725122212">+725122212</a>
+									<a href="mailto: johnjohn@gmailto.com"> johnjohn@gmailto.com </a>
+								</div>
+							</div>
+
+							<div class="contact__more" data-id="3">
+								<span class="material-symbols-outlined"> more_vert </span>
+							</div>
+						</li>
+						<li>
+							<div class="contact">
+								<img src="assets/avatar.png" />
+								<div class="contact__details">
+									<span>John</span>
+									<a href="tel:+725122212">+725122212</a>
+									<a href="mailto: johnjohn@gmailto.com"> johnjohn@gmailto.com </a>
+								</div>
+							</div>
+
+							<div class="contact__more" data-id="3">
+								<span class="material-symbols-outlined"> more_vert </span>
+							</div>
+						</li>
+					</ul>
+				</div>
+
+				<div class="contact__actions" id="menu">
+					<ul>
+						<li>
+							<a href="#">
+								<span class="material-symbols-outlined"> edit </span>
+								Editar
+							</a>
+						</li>
+						<li>
+							<a href="#">
+								<span class="material-symbols-outlined"> delete </span>
+								Eliminar
+							</a>
+						</li>
+					</ul>
+				</div>
 			</div>
 		</main>
 

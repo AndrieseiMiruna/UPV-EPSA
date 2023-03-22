@@ -5,42 +5,45 @@
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
 		<title>Contact details</title>
-		<link rel="stylesheet" href="/styles.css" />
-		<link
-			rel="stylesheet"
-			href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"
-		/>
+		<link rel="stylesheet" href="/assets/styles.css" />
+		<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
 	</head>
 	<body>
 		<header>
-			<a href="myContacts.html">
-				<span class="material-symbols-outlined"> close </span>
-			</a>
-			<h1>Contact details</h1>
-			<a href="myContacts.html">
-				<button>
-					<span class="material-symbols-outlined"> done </span>
-				</button>
-			</a>
+			<div class="wrapper">
+				<a href="myContacts.html">
+					<span class="material-symbols-outlined"> close </span>
+				</a>
+				<h1>Contact details</h1>
+				<a href="myContacts.html">
+					<button>
+						<span class="material-symbols-outlined"> done </span>
+					</button>
+				</a>
+			</div>
 		</header>
-		<main>
-			<form class="contact__form">
-				<div class="contact__line">
-					<label for="email">Email</label>
-					<input type="email" name="email" id="email" />
-				</div>
-				<div>
-					<label for="name">Name</label>
-					<input type="text" name="name" id="name" />
-				</div>
-				<div>
-					<label for="surname">Surname</label>
-					<input type="text" name="surname" id="surname" />
-				</div>
+		<div class="wrapper">
+			<main>
+				<form class="contact__form">
+					<div>
+						<label for="name">Name</label>
+						<input type="text" name="name" id="name" />
+					</div>
+					<div>
+						<label for="phone">Phone</label>
+						<input type="number" name="phone" id="phone" />
+					</div>
+					<div>
+						<label for="email">Email</label>
+						<input type="email" name="email" id="email" />
+					</div>
 
-				<label for="file-upload" class="custom-file-upload"> <i class="fa fa-cloud-upload"></i> Custom Upload </label>
-				<input id="file-upload" type="file" />
-			</form>
-		</main>
+					<div>
+						<label for="email">Picture</label>
+						<input type="file" />
+					</div>
+				</form>
+			</main>
+		</div>
 	</body>
 </html>

@@ -6,6 +6,12 @@ body {
   background-color: #f1f1fa;
   font-family: "Roboto", sans-serif;
 }
+body .wrapper {
+  max-width: 1600px;
+  width: 100%;
+  padding: 20px;
+  margin: 0 auto;
+}
 body button {
   background-color: transparent;
   border-width: 0;
@@ -26,31 +32,32 @@ body header {
   left: 0;
   right: 0;
   width: 100%;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
   padding: 0 20px;
   background-color: #f1f1fa;
   box-shadow: 0 0 8px 0 rgba(91, 92, 226, 0.1);
+}
+body header .wrapper {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0;
 }
 body header h1 {
   color: #2e375f;
   font-size: 1.6rem;
   text-transform: uppercase;
+  text-align: center;
 }
 body header .material-symbols-outlined {
   font-size: 30px;
   color: #5b5ce2;
 }
 body main {
-  padding-top: 80px;
+  padding-top: 100px;
 }
 body label {
   font-size: 12px;
   margin-top: 20px;
-}
-body input[type=file] {
-  display: none;
 }
 body .custom-file-upload {
   display: inline-block;
@@ -106,6 +113,14 @@ body .contacts ul li .contact__more {
 body .contacts ul li .contact__more span {
   color: #9197ae;
 }
+body .contact__form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+body .contact__form label {
+  color: #9197ae;
+}
 body .contact__actions {
   position: fixed;
   height: 0;
@@ -136,4 +151,8 @@ body .contact__actions ul li a span {
   color: #9197ae;
   padding-right: 10px;
   font-size: 16px;
+}
+
+.view {
+  display: none;
 }
