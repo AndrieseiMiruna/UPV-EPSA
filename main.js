@@ -105,7 +105,7 @@ function deleteContact() {
 	showMyContacts();
 }
 
-function editContact() { 
+async function editContact() { 
 	console.log('editContact')
 	console.log(selectedContact);
 	showContactDetailsScreen();
@@ -127,6 +127,8 @@ function editContact() {
 
 	removeContact(selectedContact);
 	addContact(updatedContact);
+	
+
 }
 //hide when you click outside
 document.addEventListener('mouseup', function (e) {
