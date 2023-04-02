@@ -13,20 +13,19 @@
 		<div class="view" id="myContacts">
 			<header>
 				<div class="wrapper">
-					<a href="#">
+					<button>
 						<span class="material-symbols-outlined"> menu </span>
-					</a>
+					</button>
+						
 					<h1>Contacts</h1>
-					<a href="/contactDetails.html">
-						<button>
+						<button onclick="showContactDetailsScreen()">
 							<span class="material-symbols-outlined"> add </span>
 						</button>
-					</a>
 				</div>
 			</header>
 			<main>
 				<div class="wrapper">
-					<input type="text" placeholder="Search" />
+					<input type="text" placeholder="Search" id="search"/>
 					<div class="contacts">
 						<ul id="mycontacts-list"></ul>
 					</div>
@@ -34,7 +33,7 @@
 					<div class="contact__actions">
 						<ul>
 							<li>
-								<a href="#">
+								<a href="#" onclick="editContact()">
 									<span class="material-symbols-outlined"> edit </span>
 									Editar
 								</a>
@@ -53,6 +52,12 @@
 							</li>
 						</ul>
 					</div>
+
+					<div class="fixed-button__print">
+						<button onclick="printContacts()">
+							<span class="material-symbols-outlined"> print </span>
+						</button>
+					</div>
 				</div>
 			</main>
 		</div>
@@ -60,24 +65,26 @@
 		<div class="view" id="contactDetails">
 			<header>
 				<div class="wrapper">
-					<a href="myContacts.html">
+					<a>
 						<span class="material-symbols-outlined"> close </span>
 					</a>
 					<h1>Contact details</h1>
-					<a href="myContacts.html">
-						<button>
+						<button onclick="getInputsAddContact()">
 							<span class="material-symbols-outlined"> done </span>
 						</button>
-					</a>
 				</div>
 			</header>
 
 			<main>
 				<div class="wrapper">
-					<form class="contact__form">
+					<form class="contact__form" id="contact__form">
 						<div>
 							<label for="name">Name</label>
 							<input type="text" name="name" id="name" />
+						</div>
+						<div>
+							<label for="surname">Surname</label>
+							<input type="text" name="surname" id="surname" />
 						</div>
 						<div>
 							<label for="phone">Phone</label>
@@ -89,12 +96,16 @@
 						</div>
 
 						<div>
-							<label for="email">Picture</label>
-							<input type="file" />
+							<label for="email">Select a picture (PNG or JPG only):</label>
+							<input type="file" id="picture"  accept="image/png,image/jpeg" name="picture" />
+
 						</div>
 					</form>
 				</div>
 			</main>
+		</div>
+		<div class="view" id="printContacts">
+
 		</div>
 	</body>
 	<script src="main.js"></script>

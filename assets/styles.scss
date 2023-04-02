@@ -193,3 +193,16 @@ body {
 .view {
   display: none;
 }
+
+.fixed-button__print {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  z-index: 1;
+  background-color: #5b5ce2;
+  border-radius: 30px;
+  padding: 10px 20px;
+  span{
+    color: #ffffff !important
+  }
+}
