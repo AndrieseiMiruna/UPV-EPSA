@@ -22,12 +22,12 @@ function fillContactsDOM(contacts) {
 								<div class="contact">
 									<img src="${imageSrc}" />
 									<div class="contact__details">
-										<span>${contact.name} ${contact.surname}</span>
-										<a href="tel:${contact.phone}">${contact.phone}</a>
-										<a href="mailto: ${contact.email}"> ${contact.email} </a>
+										<span>${contact.name ? contact.name : ''} ${contact.surname ? contact.surname : ''}</span>
+										<a href="tel:${contact.phone ? contact.phone : ''}">${contact.phone ? contact.phone : ''}</a>
+										<a href="mailto: ${contact.email ? contact.email : ''}">${contact.email ? contact.email : ''} </a>
 									</div>
 								</div>
-								<div class="contact__more" onclick="showMenu(${contact.id});">
+								<div class="contact__more" onclick="showMenu(${contact.id ? contact.id : 000});">
 									<span class="material-symbols-outlined"> more_vert </span>
 								</div>
 							</li>  `;
@@ -217,10 +217,10 @@ function printContacts() {
             ${contacts
 			.map((contact) => {
 				return `<tr>
-                <td>${contact.name}</td>
-                <td>${contact.surname}</td>
-                <td>${contact.phone}</td>
-                <td>${contact.email}</td>
+                <td>${contact.name ? contact.name : ''} </td>
+                <td>${contact.surname ? contact.surname : ''}</td>
+                <td>${contact.phone ? contact.phone : ''}</td>
+                <td>${contact.email ? contact.email : ''}</td>
               </tr>`;
 			})
 			.join('')}
@@ -232,4 +232,5 @@ function printContacts() {
 	printWindow.document.close();
 	printWindow.print();
 }
+
 showMyContacts();
