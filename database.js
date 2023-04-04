@@ -18,11 +18,17 @@ function addContact(contact) {
 }
 
 function updateContact(id, data) {
-	console.log(`updateContact(${id})`);
-	bd[contact.email] = data;
-	bd[contact.name] = data;
-	bd[contact.phone] = data;
-	bd[contact.surname] = data;
+	 if (bd[id]) {
+			// update the contact with the given id
+			bd[id] = { ...bd[id], ...data };
+
+			// save the updated bd object in local storage
+			localStorage.setItem('bd', JSON.stringify(bd));
+
+			console.log('Contact updated successfully.');
+		} else {
+			console.error('Contact not found.');
+		}
 }
 
 function removeContact(id) {

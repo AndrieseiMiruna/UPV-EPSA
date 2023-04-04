@@ -13,6 +13,9 @@ body .wrapper {
   padding: 20px;
   margin: 0 auto;
 }
+body a {
+  cursor: pointer;
+}
 body button {
   background-color: transparent;
   border-width: 0;

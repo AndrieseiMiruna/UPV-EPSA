@@ -6,7 +6,7 @@ function showMyContacts() {
 
 	let contacts = listContacts();
 	console.log(contacts);
-	
+
 	fillContactsDOM(contacts);
 }
 
@@ -14,7 +14,7 @@ function fillContactsDOM(contacts) {
 	let html = '';
 	contacts.map((contact) => {
 		let imageSrc = 'assets/default-image.png';
-		
+
 		if (contact.image && typeof contact.image !== 'undefined') {
 			imageSrc = contact.image;
 		}
@@ -37,43 +37,45 @@ function fillContactsDOM(contacts) {
 }
 
 async function getInputsAddContact() {
-	let contact = {};
-	contact.email = document.getElementById('email').value;
-	contact.surname = document.getElementById('surname').value;
-	contact.name = document.getElementById('name').value;
-	contact.phone = document.getElementById('phone').value;
+	if (document.getElementById('contactDetails').dataset.type === "add") {
+		let contact = {};
+		contact.email = document.getElementById('email').value;
+		contact.surname = document.getElementById('surname').value;
+		contact.name = document.getElementById('name').value;
+		contact.phone = document.getElementById('phone').value;
 
-	const inputElement = document.getElementById('picture');
-	const file = inputElement.files[0];
+		const inputElement = document.getElementById('picture');
+		const file = inputElement.files[0];
 
-	if (!file) {
-		
+		if (!file) {
+			addContact(contact);
+			return;
+		}
+
+		const formData = new FormData();
+		formData.append('upload_preset', 'uggybj0b');
+		formData.append('file', file);
+
+		try {
+			const response = await fetch('https://api.cloudinary.com/v1_1/dyeuh8mxt/image/upload', {
+				method: 'POST',
+				body: formData,
+			});
+
+			const data = await response.json();
+			contact.image = data.url;
+			console.log('Image uploaded:', data.url);
+		} catch (error) {
+			console.error('Upload error:', error);
+		}
+
 		addContact(contact);
-		return;
+		showMyContactsScreen();
 	}
-		
-	const formData = new FormData();
-	formData.append('upload_preset', 'uggybj0b');
-	formData.append('file', file);
-
-	 try {
-    const response = await fetch('https://api.cloudinary.com/v1_1/dyeuh8mxt/image/upload', {
-      method: 'POST',
-      body: formData
-    });
-    
-    const data = await response.json(); 
-    contact.image = data.url;
-	console.log('Image uploaded:', data.url);
-	 } catch (error) {
-	
-    console.error('Upload error:', error);
-  }
-
-	addContact(contact);
-	showMyContactsScreen();
+	else {
+		editContact()
+	}
 }
-
 
 function showMyContactsScreen() {
 	const contactDetails = document.getElementById('contactDetails');
@@ -83,7 +85,35 @@ function showMyContactsScreen() {
 	showMyContacts();
 }
 
+function showContactDetailsScreenForEditing() {
+	generalContactDetailsScreen();
+
+	//precomplete with old values
+	const oldData = JSON.parse(localStorage.getItem('bd'));
+	console.log(typeof oldData);
+	const selectedContactData = oldData[selectedContact];
+	console.log(selectedContactData);
+	document.getElementById('email').value = selectedContactData.email;
+	document.getElementById('surname').value = selectedContactData.surname;
+	document.getElementById('name').value = selectedContactData.name;
+	document.getElementById('phone').value = selectedContactData.phone;
+
+	//add dataset for the next step
+	const contactDetails = document.getElementById('contactDetails');
+	contactDetails.dataset.type = 'edit';
+}
+
 function showContactDetailsScreen() {
+	generalContactDetailsScreen();
+	const contactDetails = document.getElementById('contactDetails');
+	contactDetails.dataset.type = "add";
+	document.getElementById('email').value = '';
+	document.getElementById('surname').value = '';
+	document.getElementById('name').value = '';
+	document.getElementById('phone').value = '';
+}
+
+function generalContactDetailsScreen() {
 	const contactDetails = document.getElementById('contactDetails');
 	const myContacts = document.getElementById('myContacts');
 	contactDetails.style.display = 'block';
@@ -105,19 +135,9 @@ function deleteContact() {
 	showMyContacts();
 }
 
-async function editContact() { 
+async function editContact() {
 	console.log('editContact')
 	console.log(selectedContact);
-	showContactDetailsScreen();
-	const oldData = JSON.parse(localStorage.getItem('bd'));
-	console.log(typeof oldData);
-	const selectedContactData = oldData[selectedContact]
-	console.log(selectedContactData);
-	//precomplete with old values
-	document.getElementById('email').value = selectedContactData.email;
-	document.getElementById('surname').value = selectedContactData.surname;
-	document.getElementById('name').value = selectedContactData.name;
-	document.getElementById('phone').value = selectedContactData.phone;
 
 	const updatedContact = {};
 	updatedContact.email = document.getElementById('email').value;
@@ -125,10 +145,7 @@ async function editContact() {
 	updatedContact.name = document.getElementById('name').value;
 	updatedContact.phone = document.getElementById('phone').value;
 
-	removeContact(selectedContact);
-	addContact(updatedContact);
-	
-
+	updateContact(selectedContact, updatedContact);
 }
 //hide when you click outside
 document.addEventListener('mouseup', function (e) {
@@ -151,7 +168,7 @@ function filterContacts(searchText) {
 		return name.includes(searchTextLowerCase) || email.includes(searchTextLowerCase);
 	});
 	return filteredContacts;
-	
+
 }
 
 document.getElementById('search').addEventListener('keyup', (event) => {
@@ -198,15 +215,15 @@ function printContacts() {
           </thead>
           <tbody>
             ${contacts
-				.map((contact) => {
-					return `<tr>
+			.map((contact) => {
+				return `<tr>
                 <td>${contact.name}</td>
                 <td>${contact.surname}</td>
                 <td>${contact.phone}</td>
                 <td>${contact.email}</td>
               </tr>`;
-				})
-				.join('')}
+			})
+			.join('')}
           </tbody>
         </table>
       </body>
